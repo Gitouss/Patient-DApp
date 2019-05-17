@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Mediblock DAPP Diagnosis</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <style>
+    @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+    label{
+    	position: relative;
+    	cursor: pointer;
+    	color: #666;
+    	font-size: 20px;
+    }
+    .toggle input[type="radio"] + .label-text:before{
+    	content: "\f204";
+    	font-family: "FontAwesome";
+    	speak: none;
+    	font-style: normal;
+    	font-weight: normal;
+    	font-variant: normal;
+    	text-transform: none;
+    	line-height: 1;
+    	-webkit-font-smoothing:antialiased;
+    	width: 1em;
+    	display: inline-block;
+    	margin-right: 10px;
+    }
+
+    .toggle input[type="radio"]:checked + .label-text:before{
+    	content: "\f205";
+    	color: #16a085;
+    	animation: effect 250ms ease-in;
+    }
+
+    .toggle input[type="radio"]:disabled + .label-text{
+    	color: #aaa;
+    }
+
+    .toggle input[type="radio"]:disabled + .label-text:before{
+    	content: "\f204";
+    	color: #ccc;
+    }
+</style>
+
+
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Homepage</a>
+              <a class="navbar-brand" href="#">About</a>
+          </div>
+        </div><!-- /.container-fluid -->
+     </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Cancer Risk Factor Page</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="col-lg-2"></div>
+      <div class="col-lg-7">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+          <li class="breadcrumb-item"><a href="patientPersonalInfo.html">Personal Info</a></li>
+          <li class="breadcrumb-item active">Diagnosis</li>
+        </ol>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Liver Cancer Risk Factors </h3>
+          </div>
+          <div class="panel-body">
+            <div id="img-wrapper"></div>
+                <form>
+            				<h3>Do you take more than five (5) units of alcohol?</h3>
+
+                    <label class="radio-inline toggle">
+                      <input id ="alcohol1" type="radio" value="1" name="alcohol"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="alcohol2" type="radio" value="0" name="alcohol"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <h3>Do you smoke ?</h3>
+                    <label class="radio-inline toggle">
+                      <input id ="smoke1" type="radio" value="1" name="smoke"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="smoke2" type="radio" value="0" name="smoke"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <h3>Is Liver Cancer in your family history?</h3>
+                    <label class="radio-inline toggle">
+                      <input id ="history1" type="radio" value="1" name="history"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="history2" type="radio" value="0" name="history"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <h3>Have you had Gallbladder removal?</h3>
+                    <label class="radio-inline toggle">
+                      <input id ="gall1" type="radio" value="1" name="gall"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="gall2" type="radio" value="0" name="gall"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <h3>Have you eaten Aflatoxin over a long period of time?</h3>
+                    <label class="radio-inline toggle">
+                      <input id ="aflatoxin1" type="radio" value="1" name="aflatoxin"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="aflatoxin2" type="radio" value="0" name="aflatoxin"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <h3>Have you been exposed to chemicals such as Vinyl Chloride?</h3>
+                    <label class="radio-inline toggle">
+                      <input id ="chemical1" type="radio" value="1" name="chemical"> <span class="label-text">YES</span>
+                    </label>
+                    <label class="radio-inline toggle">
+                      <input id ="chemical2" type="radio" value="0" name="chemical"> <span class="label-text">NO</span>
+                    </label>
+                    <hr>
+                    <button type="button" class="btn btn-primary btn-check-risk">Check risk</button>
+                    <button type="button" class="btn btn-default btn-decrypt">Show encrypted value</button>
+            		</form>
+              <!-- <button class="btn btn-default btn-patient" type="button" data-id="0">Patient</button> -->
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+        <ul class="list-group">
+            <li class="list-group-item active">Important Notice</li>
+            <li class="list-group-item">Kindly check applicable options.</li>
+
+        </ul>
+        <div class="alert alert-info"><p style="Word-wrap: break-word" class="lblHash"></p></div>
+
+      </div>
+    </div>
+
+    <!-- Bootstrap modal --->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" data-backdrop="static" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+          <div style="padding:20px"><img style="display:block;margin-left: auto;margin-right: auto" src="images/ajax-loader.gif"/></div>
+        </div>
+      </div>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+    <script type="text/javascript" src="js/jsbn/jsbn.js"></script>
+    <script type="text/javascript" src="js/jsbn/jsbn2.js"></script>
+    <script type="text/javascript" src="js/jsbn/prng4.js"></script>
+    <script type="text/javascript" src="js/jsbn/rng.js"></script>
+    <script type="text/javascript" src="js/paillier.js"></script>
+    <script>
+       //$('.modal').modal('show')
+       var inputData = JSON.parse(localStorage.getItem("inputValues"));
+
+        setInput("alcohol",inputData.alcohol);
+        setInput("smoke",inputData.smoke);
+        setInput("chemical",inputData.chemical);
+        setInput("gall",inputData.gall);
+        setInput("history",inputData.history);
+        setInput("aflatoxin",inputData.aflatoxin);
+
+       function setInput(name,value){
+
+         if(value ===1){
+
+           $("#"+name+"1").attr('checked', 'checked');
+           $("#"+name+"1").attr('value', 1);
+         }
+         else{
+            $("#"+name+"2").attr('value', 0);
+         }
+          // $("input[type=radio][name='"+name+"']").prop("checked", value===1?true:false);
+          // if
+       }
+
+       if(JSON.parse(localStorage.getItem("sum")) > 5){
+         $("#img-wrapper").empty().html("<img src='images/high.gif'/><hr>")
+       }else{
+         $("#img-wrapper").empty().html("<img src='images/low.gif'/><hr>")
+       }
+    </script>
+  </body>
+</html>

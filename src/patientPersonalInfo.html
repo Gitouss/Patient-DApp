@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mediblock DAPP</title>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    p {
+        font-family: 'Tangerine', serif;
+        font-size: 28px;
+      }
+    </style>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Homepage</a>
+              <a class="navbar-brand" href="#">About</a>
+          </div>
+        </div><!-- /.container-fluid -->
+     </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+
+        </div>
+        <div class="col-lg-6">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+            <li class="breadcrumb-item active">Personal Info</li>
+          </ol>
+
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title">Patient's Personal Record</h3>
+            </div>
+            <div class="panel-body">
+          <table class="table table-hover">
+
+            <tbody>
+              <tr>
+                <th>First name</th>
+                <td id="fname"></td>
+              </tr>
+              <tr>
+                <th>Last name</th>
+                <td id="lname"></td>
+              </tr>
+              <tr>
+                <th>Gender</th>
+                <td id="gender"></td>
+              </tr>
+              <tr>
+                <th>Phone</th>
+                <td id="phone"></td>
+              </tr>
+              <tr>
+                <th>Email</th>
+                <td id="email"></td>
+              </tr>
+              <tr>
+                <th>Address</th>
+                <td id="address"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+          <div class="panel-footer"><a href="diagnosis.html" class="btn btn-primary btn-block">Risk Factor Check</a></div>
+      </div>
+
+        </div>
+
+        <div class="col-lg-3">
+          <ul class="list-group">
+              <li class="list-group-item active">Information</li>
+              <li class="list-group-item">This page basically displays patient's record. However, patients are not allowed to modify this record. You may contact the administrator should you need to update.</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+
+
+<script>
+  var data = localStorage.getItem("patientInfo");
+  $.ajax({
+           type: 'GET',
+           url: "http://127.0.0.1/MediblockAccountApi/register.php?username=Nnamdi&password=2000years@bc",
+           //contentType: 'application/json; charset=utf-8',
+           success: function(response) {
+               console.log(response);
+           },
+           error: function(error) {
+               console.log(error);
+           }
+       });
+
+  $("#fname").empty().append(JSON.parse(data)[0]);
+  $("#lname").empty().append(JSON.parse(data)[1]);
+  $("#gender").empty().append(JSON.parse(data)[2]);
+  $("#phone").empty().append(JSON.parse(data)[3]);
+  $("#email").empty().append(JSON.parse(data)[4]);
+  $("#address").empty().append(JSON.parse(data)[5]);
+
+//alert(localStorage.patientInfo[0]);
+//document.getElementById("gender").innerHTML = localStorage.lastname;
+</script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

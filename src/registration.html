@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Patient-DApp</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+
+            <a class="navbar-brand" href="index.html">Homepage</a>
+              <a class="navbar-brand" href="#">About</a>
+          </div>
+        </div><!-- /.container-fluid -->
+     </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center">Registration</h1>
+          <hr/>
+          <br/>
+        </div>
+      </div>
+    </div>
+
+
+    <div>
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Homepage</a></li>
+          <li class="breadcrumb-item active">Registration</li>
+        </ol>
+        <form method="post">
+          <div style="display: none" id="error-box" class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <strong>Oops!</strong> <span id="error-msg">You should check in on some of those fields below.</span>
+          </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Patient Info</h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <input type="text" id="eth_address" name="eth_address" required  placeholder="Ethereum Address" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="text" id="fname" name="firstname" required  placeholder="First name" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="text" id="lname" name="lastname" required placeholder="Last name" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="text" id="gender" name="gender" required  placeholder="Gender" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="phone" id="phone" name="phone" required  placeholder="Phone" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" required  placeholder="Email" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="text" id="address" name="address" required placeholder="Address" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <input type="text" id="dob" name="address" required placeholder="Date of Birth" class="form-control"/>
+            </div>
+
+            <!-- <button class="btn btn-primary btn-pass" type="button" data-id="0">Test Password</button> -->
+              <!-- <button class="btn btn-default btn-patient" type="button" data-id="0">Patient</button> -->
+          </div>
+        </div>
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h3 class="panel-title">Login Information</h3>
+          </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <input type="text" id="username" name="username" required placeholder="Username" class="form-control"/>
+              </div>
+              <div class="form-group">
+                <input  type="password" id="password" name="password" required placeholder="Password" class="form-control"/>
+              </div>
+            </div>
+        </div>
+          <button class="btn btn-primary btn-register-main" type="button">Register <img id="img-loader"  style="display: none; heigth:30px; width:30px" src="images/loader.gif" /></button>
+          <button class="btn btn-default btn-clear" type="button">Clear</button>
+          <button style="visibility:hidden" class="btn btn-primary btn-register" type="button" data-id="0">Register</button><hr/>
+     </form>
+      </div>
+      <div class="col-lg-3">
+        <ul class="list-group">
+            <li class="list-group-item active">Important Notice</li>
+            <li class="list-group-item">Please fileds marked astericks are mandatory.</li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+    $(function(){
+      $(".btn-pass").click(function(){
+        //alert("Yesooo");
+      })
+    })
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/bundle.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
